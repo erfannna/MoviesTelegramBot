@@ -125,7 +125,7 @@ def display_movie_details(update: Update, context):
         f"🎥 *Directors:* {response['Director']}\n"
         f"✍ *Writers:* {response['Writer']}\n"
         f"🏆 *Awards:* {response['Awards']}\n\n"
-        f"📖 *Story Line:*\n <tg-spoiler>{response['Plot']}</tg-spoiler>\n"
+        f"📖 *Story Line:*\n ||{response['Plot']}||\n"
     )
 
     short_title = response['Title'][:30] + '...' if len(response['Title']) > 30 else response['Title']
