@@ -89,19 +89,19 @@ def inline_search_movies(update: Update, context):
     response = requests.get(url).json()
 
     results = []
-    
-    for movie in response["Search"]:
-        results.append(
-            InlineQueryResultArticle(
-                id=movie["imdbID"],
-                title=f'{movie["Title"]} {movie["Year"]}',
-                description=f'{movie["Type"]}',
-                thumb_url=movie["Poster"],
-                input_message_content=InputTextMessageContent(movie["imdbID"]),
+    if response["Response"] == "True":
+        for movie in response["Search"]:
+            results.append(
+                InlineQueryResultArticle(
+                    id=movie["imdbID"],
+                    title=f'{movie["Title"]} {movie["Year"]}',
+                    description=f'{movie["Type"]}',
+                    thumb_url=movie["Poster"],
+                    input_message_content=InputTextMessageContent(movie["imdbID"]),
+                )
             )
-        )
 
-    update.inline_query.answer(results)
+        update.inline_query.answer(results)
 
 
 def display_movie_details(update: Update, context):
