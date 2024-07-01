@@ -2,8 +2,8 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, InlineQ
 from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, InlineQueryHandler, MessageHandler, Filters
 import requests
 
-BOT_API_KEY = "6935659962:AAGsWQbafh1lPYc2mBl7lqIqixL6PZrRabs"  
-OMDB_API_KEY = "5081408a"
+BOT_API_KEY = "*"  
+OMDB_API_KEY = "*"
 
 user_watchlists = {}
 
